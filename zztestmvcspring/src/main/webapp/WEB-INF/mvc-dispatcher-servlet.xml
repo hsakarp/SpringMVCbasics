@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="registerController" class="com.prakash.controllers.RegisterController">
+	<property name="registerService" ref="registerService"></property>
+	</bean>
+	
+	<bean id="loginController" class="com.prakash.controllers.LoginController">
+	<property name="loginService" ref="loginService"></property>
+	</bean>
+	
+	<bean id="loginService" class="com.prakash.services.LoginService"></bean>
+	
+	<bean id="registerService" class="com.prakash.services.RegisterService"></bean>
+	
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+</beans>
